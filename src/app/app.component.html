@@ -1,5 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <input type="text" [(ngModel)]="userName"/>
+  <p>{{userName}}</p>
+  <input type="button" value="Reset userName" [disabled]="userName === undefined || userName.trim().length === 0" (click)="resetName()"/>
   <app-success-alert></app-success-alert>
   <app-warning-alert></app-warning-alert>
 </div>
