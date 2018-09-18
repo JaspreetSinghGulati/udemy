@@ -3,6 +3,11 @@
   <input type="text" [(ngModel)]="userName"/>
   <p>{{userName}}</p>
   <input type="button" value="Reset userName" [disabled]="userName === undefined || userName.trim().length === 0" (click)="resetName()"/>
+  <button (click)="hideText()">{{textLabel}}</button>
+  <p *ngIf="isText">Secret Password: tuna</p>
+  <div class="row" *ngFor="let currentTimeStamp of timeArray;let idx=index;" >
+    <p [ngStyle]="{backgroundColor : idx >= 4 ? 'blue':'white'}" [ngClass]="{'custom' : idx >= 4}">{{currentTimeStamp}}</p>
+  </div>
   <app-success-alert></app-success-alert>
   <app-warning-alert></app-warning-alert>
 </div>
